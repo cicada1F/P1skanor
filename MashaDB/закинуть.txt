@@ -1,0 +1,2 @@
+my.ini modules\database\MariaDB-10.8-Win10
+php.ini modules\php\PHP_8.1
