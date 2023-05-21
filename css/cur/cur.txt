@@ -1,0 +1,3 @@
+cursor: url('https://res.cloudinary.com/djclvnzg1/image/upload/v1683210270/fly-ani_pgzy7v.svg') 0 0, auto;
+/
+cursor: url('/cur/fly-ani.svg') 0 0, auto;
