@@ -1,0 +1,54 @@
+h2 {
+  display: inline-block; /* отображаем логин в одной строке с кнопками */
+}
+
+button {
+display: inline-block;
+    background-color: var(--green);
+    padding: 2px 12px;
+    text-align: center;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    color: var(--black);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: "neue-pixel", sans-serif;
+    position: relative; /* добавляем относительное позиционирование */
+
+font-family: mini-pixel, sans-serif;
+  border-width: 2px 2px 5px 2px;
+}
+
+button::before { /* добавляем псевдоэлемент ::before для создания белой рамки */
+    content: "";
+    position: absolute;
+    top: 0px; /* на 2px меньше, чем граница */
+    left: 0px; /* на 2px меньше, чем граница */
+    right: 1px; /* на 2px меньше, чем граница */
+    bottom: 1px; /* на 2px меньше, чем граница */
+    border: 2px solid var(--white); /* белая рамка */
+    border-right: none; /* убираем правую часть рамки */
+    border-bottom: none; /* убираем нижнюю часть рамки */
+    border-radius: 10px; /* такой же радиус, как и у кнопки */
+}
+
+button:hover {
+background-color: var(--orange);
+}a{
+text-decoration: none;
+color: black;
+}
+
+.buttons-container {
+ 
+  display: inline-block;
+  flex-direction: row-reverse;
+}
+
+.buttons-container button {
+  margin-left: 10px;
+}
+.log {
+display: inline-block;
+font-family: Roboto;
+}
