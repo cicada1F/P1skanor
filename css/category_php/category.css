@@ -1,0 +1,202 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #272626;
+  --black-lite: #6e6e6e;
+  --brown: #d8d4bc;
+  --pink: #f54896;
+  --green: #bfe04d;
+  --white: #f3f2f2;
+  --lite-blue: #c8e0e3;
+  --dark-blue: #71b1b9;
+  --orange: #ffb900;
+
+  --num-of-topics: 0;
+}
+
+
+
+h2,
+h3 {
+  font-family: "mini-pixel", serif;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+a {
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+
+
+#header {
+background-color: var(--white);
+  border-top: 2px solid var(--black-lite);
+border-left: 2px solid var(--black-lite);
+border-right: 2px solid var(--black-lite);
+border-bottom: 2px solid var(--black-lite);
+height: 105%;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 40px;
+}
+#header h1 {
+padding-left: 5px;
+  font-family: "unlearned", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+#header .nav {
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  column-gap: 1em;
+
+}
+#header .nav li {
+  border: 1px solid var(--black);
+  background-color: var(--green);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+#header .nav li a {
+  display: block;
+  padding: 2px 12px;
+  text-align: center;
+  border-left: 2px solid var(--white);
+  border-top: 2px solid var(--white);
+  font-weight: bold;
+  color: var(--black);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-family: "neue-pixel", sans-serif;
+}
+#header .nav li:hover {
+  background-color: var(--orange);
+}
+
+
+.arrow {
+  transform: rotate(-180deg);
+}
+
+ .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav li {
+        margin-right: 20px;
+    }
+.d_reg{
+width: 102%;
+}
+.d_cont{
+display: block;
+
+}
+.data_tbl {
+border-collapse: collapse;
+    border: 0px solid black;
+    width: 100%;
+    font-size: 1em;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+    font-family: "neue-pixel", sans-serif;
+    border-bottom: 2px solid var(--black-lite);
+    border-top: 2px solid var(--black-lite);
+    border-left: 2px solid var(--black-lite);
+    border-right: 2px solid var(--black-lite);
+}
+th, td {
+
+  padding: 10px;
+
+}
+
+button {
+    background-color: var(--green);
+    display: block;
+    padding: 2px 12px;
+    text-align: center;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--black);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: "neue-pixel", sans-serif;
+    position: relative; /* добавляем относительное позиционирование */
+margin-top: 6px;
+border-width: 2px 2px 5px 2px;
+}
+
+button::before { /* добавляем псевдоэлемент ::before для создания белой рамки */
+    content: "";
+    position: absolute;
+    top: 0px; /* на 2px меньше, чем граница */
+    left: 0px; /* на 2px меньше, чем граница */
+    right: 1px; /* на 2px меньше, чем граница */
+    bottom: 1px; /* на 2px меньше, чем граница */
+    border: 2px solid var(--white); /* белая рамка */
+    border-right: none; /* убираем правую часть рамки */
+    border-bottom: none; /* убираем нижнюю часть рамки */
+    border-radius: 10px; /* такой же радиус, как и у кнопки */
+}
+
+
+button:hover{
+background-color: var(--orange);
+}a{
+text-decoration: none;
+color: black;
+}
+
+#container {
+width: 170%;
+  padding: 1em;
+  background-color: var(--white);
+  margin-bottom: 2em;
+  border-bottom: 2px solid var(--black-lite);
+  border-left: 2px solid var(--black-lite);
+  border-right: 2px solid var(--black-lite);
+}
+
+.arrow {
+transform: rotate(180deg);
+}
+
+input {
+padding: 5px;
+       border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
