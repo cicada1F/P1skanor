@@ -72,10 +72,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 mysqli_close($link);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/restore_pass/restore.css">
+  <link rel="stylesheet" href="css/text/font.css">
+  <link rel="stylesheet" href="css/back/background.css">
+  <link rel="stylesheet" href="css/butons.css">
+  <title>Восстановить пароль</title>
+</head>
+<body>
+<div class="piska"></div>
+<div id="header">
+
+</div>
+<div id="container">
 
 <!-- Форма восстановления пароля -->
 <form method="POST">
     <label for="login">Логин:</label>
     <input type="text" id="login" name="login" required>
     <button type="submit">Восстановить пароль</button>
+	<button type="button" class="back" onclick="history.back()">Назад</button>
 </form>
+</div>
+</body>
+</html>

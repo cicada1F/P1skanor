@@ -2,7 +2,28 @@
 session_start();
 // подключение к базе данных
 include 'login.php';
-// меню
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/edit_users/edit_users.css">
+  <link rel="stylesheet" href="css/text/font.css">
+  <link rel="stylesheet" href="css/back/background.css">
+  <link rel="stylesheet" href="css/butons.css">
+    <title>Пользователи</title>
+</head>
+<body>
+ <div class="piska"></div>
+ <div id="header">
+ <h1>Управление пользователями</h1>
+  <ul class="nav">
+ <?
+ // меню
 include 'menu.php';
 if (isset($_SESSION['status']) && $_SESSION['status'] == 1) {
 
@@ -61,21 +82,18 @@ function getAvatarImage($avatar)
 {
     return "data:image/jpeg;base64," . base64_encode($avatar);
 }
-}else{
+}
+else{
      echo '<script>window.location.href = "main.php";</script>';
      exit;
 }
-?>
+ ?>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Пользователи</title>
-</head>
-<body>
-    <h1>Управление пользователями</h1>
-    <table border="1">
+ </ul>
+ </div>
+ <div id="container">
+    
+    <table border="1" class="data_tbl">
         <thead>
             <tr>
                 <th>Имя пользователя</th>
@@ -163,7 +181,7 @@ function getAvatarImage($avatar)
             <?php endforeach; ?>
         </tbody>
     </table>
-
+</div>
     <script>
 var saveUserButton = document.querySelector('button[name="saveUser"]');
 
