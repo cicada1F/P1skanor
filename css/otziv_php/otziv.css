@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+  }
+  .nav li {
+    margin: 0;
+  }
+  .nav li a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .data_tbl {
+    font-size: 14px;
+  }
+  .data_tbl th,
+  .data_tbl td {
+    padding: 5px;
+  }
+}
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #272626;
+  --black-lite: #6e6e6e;
+  --brown: #d8d4bc;
+  --pink: #f54896;
+  --green: #bfe04d;
+  --white: #f3f2f2;
+  --lite-blue: #c8e0e3;
+  --dark-blue: #71b1b9;
+  --orange: #ffb900;
+
+  --num-of-topics: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: var(--brown);
+  background-image: url("/siteP1/img/kuji.png");
+}
+
+h2 {
+  font-family: "mini-pixel", serif;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+a {
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+#header,
+#container {
+display: grid;
+  max-width: 100%;
+  background-color: var(--white);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 1em;
+  margin-top: 2em;
+  background-color: var(--white);
+flex-direction: column;
+}
+#header h1 {
+  font-family: "unlearned", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+#header .nav {
+display: grid;
+    grid-template-columns: repeat(4, min-content);
+    column-gap: 6em;
+    row-gap: 2em;
+}
+#header .nav li {
+  border: 1px solid var(--black);
+  background-color: var(--green);
+  border-radius: 10px;
+}
+
+
+#header .nav li a {
+  display: block;
+  padding: 2px 12px;
+  text-align: center;
+  border-left: 2px solid var(--white);
+  border-top: 2px solid var(--white);
+  font-weight: bold;
+  color: var(--black);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-family: "neue-pixel", sans-serif;
+}
+#header .nav li:hover {
+  background-color: var(--orange);
+}
+
+ .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav li {
+        margin-right: 20px;
+    }
+.d_reg{
+width: 102%;
+}
+
+button {
+    background-color: var(--green);
+    display: block;
+    padding: 2px 12px;
+    text-align: center;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    margin-bottom: 4px;
+    color: var(--black);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: "neue-pixel", sans-serif;
+    position: relative; /* добавляем относительное позиционирование */
+	border-width: 2px 2px 5px 2px;
+}
+
+button::before { /* добавляем псевдоэлемент ::before для создания белой рамки */
+    content: "";
+    position: absolute;
+    top: 0px; /* на 2px меньше, чем граница */
+    left: 0px; /* на 2px меньше, чем граница */
+    right: 1px; /* на 2px меньше, чем граница */
+    bottom: 1px; /* на 2px меньше, чем граница */
+    border: 2px solid var(--white); /* белая рамка */
+    border-right: none; /* убираем правую часть рамки */
+    border-bottom: none; /* убираем нижнюю часть рамки */
+    border-radius: 10px; /* такой же радиус, как и у кнопки */
+}
+
+
+button:hover{
+background-color: var(--orange);
+}a{
+text-decoration: none;
+color: black;
+}
+
+#container {
+width: 170%;
+  padding: 1em;
+  background-color: var(--white);
+  margin-bottom: 2em;
+  border-bottom: 2px solid var(--black-lite);
+  border-left: 2px solid var(--black-lite);
+  border-right: 2px solid var(--black-lite);
+}
+
+.post {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  gap: 1em;
+}
+
+label {
+font-family: mini-pixel;
+}
+
+.otzivi 
+{
+color: var(--black);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: "neue-pixel", sans-serif;
+    position: relative;
+    border: 2px solid #272626;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-bottom: 3px;
+    text-align: center;
+    
+    width: 150%;
+}
+
+#back {
+
+    padding: 2em 1em;
+    text-align: left;
+    color: var(--black);
+    vertical-align: middle;     
+    background-color: var(--white);
+    border-top: 2px solid var(--black-lite);
+    border-left: 2px solid var(--black-lite);
+    border-right: 2px solid var(--black-lite);
+    border-bottom: 2px solid var(--black-lite); 
+    max-width: 100%;
+    min-width: 50%;
+}
+.arrow {
+transform: rotate(180deg);
+}
