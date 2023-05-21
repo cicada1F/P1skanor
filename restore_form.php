@@ -12,6 +12,9 @@ function generateUniqueCode($length = 32) {
   return $code;
 }
 
+// Переменная для проверки успешности отправки письма
+$mailSent = false;
+
 // Обработка формы восстановления пароля
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Получение введенного пользователем логина
@@ -24,37 +27,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) === 1) {
         // Логин найден, можно выполнить логику восстановления пароля
         $user = mysqli_fetch_assoc($result);
-        $email = $user['email'];
+        $email = $user['login'];
 
         // Генерация уникального кода для ссылки
         $code = generateUniqueCode();
 
-        // Сохранение кода в базе данных или другом хранилище вместе с почтой пользователя
-        // Здесь необходимо использовать вашу логику сохранения кода в базе данных или другом хранилище
-        // Например, можно создать отдельную таблицу с полями email и code, и добавить запись для текущего пользователя
+        // Обновление поля "codereset" в базе данных
+        $updateQuery = "UPDATE users SET codereset = '$code' WHERE login = '$login'";
+        $updateResult = mysqli_query($link, $updateQuery);
 
-        // Формирование ссылки для восстановления пароля
-        $resetPasswordLink = 'https://example.com/reset_password.php?code=' . $code . '&email=' . urlencode($email);
+        if ($updateResult) {
+            // Поле успешно обновлено, продолжаем с отправкой письма
 
-        // Отправка письма с ссылкой на восстановление пароля
-        $to = $email;
-        $subject = 'Восстановление пароля';
-        $message = 'Для восстановления пароля перейдите по следующей ссылке: ' . $resetPasswordLink;
-        $headers = 'From: YourName <noreply@example.com>' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            // Формирование ссылки для восстановления пароля
+            $resetPasswordLink = 'https://example.com/reset_password.php?code=' . $code . '&email=' . urlencode($email);
 
-        // Отправка письма
-        $mailSent = mail($to, $subject, $message, $headers);
+            // Отправка письма с ссылкой на восстановление пароля
+            $to = $email;
+            $subject = 'Восстановление пароля';
+            $message = 'Для восстановления пароля перейдите по следующей ссылке: ' . $resetPasswordLink;
+            $headers = 'From: Suppoty <P1skanorSupport@golov4lena.com>' . "\r\n";
+           
+            // Отправка письма
+            $mailSent = mail($to, $subject, $message, $headers);
 
-        // Проверка успешности отправки письма
-        if ($mailSent) {
-            echo 'Письмо с инструкциями по восстановлению пароля отправлено на вашу почту.';
+            // Проверка успешности отправки письма
+            if ($mailSent) {
+                echo '<script>alert("Письмо с инструкциями по восстановлению пароля отправлено на вашу почту.");';
+                echo 'window.location.href = "auth_form.php";</script>';
+            } else {
+                echo '<script>alert("Ошибка при отправке письма. Попробуйте еще раз.");</script>';
+            }
         } else {
-            echo 'Ошибка при отправке письма. Попробуйте еще раз.';
+            // Ошибка при обновлении поля
+            echo '<script>alert("Ошибка при обновлении поля codereset. Попробуйте еще раз.");</script>';
+            // Можно добавить дополнительную обработку ошибки или прервать выполнение скрипта
+            exit;
         }
     } else {
         // Логин не найден
-        echo 'Пользователь с указанным логином не найден.';
+        echo '<script>alert("Пользователь с указанным логином не найден.");</script>';
     }
 }
 

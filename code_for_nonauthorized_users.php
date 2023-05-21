@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="css/butons.css">
 </head>
+<body>
 <div class="avatar-container">
     <div class="links">
         <button onclick="window.location.href='reg_form.php'">Регистрация</button><br>
@@ -25,3 +26,4 @@
     }
     ?>
 </div>
+</body>

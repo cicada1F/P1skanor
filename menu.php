@@ -21,7 +21,7 @@
 
 <!-- <button type="button" class="back" onclick="history.back()"><div class="arrow">↪</div></button> -->
 <?php
-if ($_SERVER['REQUEST_URI'] !== '/siteP1/main.php') {
+if ($_SERVER['REQUEST_URI'] !== '/siteP1/main.php' && $_SERVER['REQUEST_URI'] !== '/siteP1/gigachad.php') {
     echo '<button type="button" class="back" onclick="history.back()"><div class="arrow">↪</div></button>';
 }
 ?>

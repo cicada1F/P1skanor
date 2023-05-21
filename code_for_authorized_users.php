@@ -65,6 +65,8 @@
         if (!empty($_SESSION['id']) && $_SESSION['status'] == 1) {
           echo '<option value="category.php" style="font-family: mini-pixel">Редактор</option>';
           echo '<option value="history.php" style="font-family: mini-pixel">История</option>';
+          echo '<option value="gigachad.php" style="font-family: mini-pixel">Бог</option>';
+          
         }
         if (!empty($_SESSION['id']) && $_SESSION['status'] == 2) {
           echo '<option value="history.php" style="font-family: mini-pixel">История</option>';
